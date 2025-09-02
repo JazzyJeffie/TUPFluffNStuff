@@ -1,0 +1,119 @@
+@import './style.css';
+@import './components/footer.css';
+@import './components/header.css';
+@import './components/sidebar.css';
+
+:root {
+  --main-color: #fefefe;
+  --sub-color: #fff7fb;
+  --border-color: #ffe0ec;
+  --border-color1: #ddd;
+  --header-color: #f8f9fa;
+  --primary-color: #4a90e2;
+  --secondary-color: #eba2e5;
+  --danger-color: #e74c3c;
+  --success-color: #2ecc71;
+  --light-gray: #f7f7f7;
+  --text-dark: #333;
+  --radius: 10px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* --- Main Content --- */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  margin-left: 90px; /* leave space for sidebar */
+}
+
+.container {
+  background: var(--sub-color);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px var(--border-color1);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+h1,
+h2 {
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+button,
+a.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease, transform 0.2s;
+  text-decoration: none;
+}
+
+button:hover,
+a.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Buttons */
+#json-backup {
+  background: var(--primary-color);
+  color: var(--main-color);
+}
+
+#json-backup:hover {
+  background: #357ab8;
+}
+
+#zip-backup {
+  background: var(--success-color);
+  color: var(--main-color);
+}
+
+#zip-backup:hover {
+  background: #27ae60;
+}
+
+a.btn {
+  background: var(--secondary-color);
+  color: var(--main-color);
+}
+
+a.btn:hover {
+  background: #d179ce;
+}
+
+#restore-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+#status {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--text-dark);
+}

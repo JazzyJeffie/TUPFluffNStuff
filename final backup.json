@@ -1,0 +1,4276 @@
+{
+  "meta": {
+    "generatedAt": "2025-09-01T07:19:06.623Z",
+    "collections": [
+      "users",
+      "products",
+      "categories",
+      "inventories",
+      "inventoryRecords",
+      "suppliers",
+      "stocks",
+      "stockAdjustments",
+      "transactions",
+      "transactionItems",
+      "refunds",
+      "actionLogs"
+    ]
+  },
+  "data": {
+    "users": [
+      {
+        "_id": "68ad84698455bdee5f67a3af",
+        "email": "cashier@gmail.com",
+        "name": {
+          "firstName": "Cashier",
+          "lastName": "User"
+        },
+        "role": "cashier",
+        "password": "$2b$12$7fPvmxVgiReIV1QuWce/ieNOqZ0yt7760j/Cpu8KPuDnDE4EMJ1Cu",
+        "status": "active",
+        "createdAt": "2025-08-26T09:54:49.400Z",
+        "updatedAt": "2025-08-26T09:54:49.400Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ad84698455bdee5f67a3b2",
+        "email": "inventory@gmail.com",
+        "name": {
+          "firstName": "Inventory",
+          "lastName": "User"
+        },
+        "role": "inventory",
+        "password": "$2b$12$Mvu7oV2Ib38BKSHuHT55nu.meJkGDfnQHcUSn1JOfzfV3He/s/LW.",
+        "status": "active",
+        "createdAt": "2025-08-26T09:54:49.806Z",
+        "updatedAt": "2025-08-26T09:54:49.806Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ad846a8455bdee5f67a3b5",
+        "email": "admin@gmail.com",
+        "name": {
+          "firstName": "Admin",
+          "lastName": "User"
+        },
+        "role": "admin",
+        "password": "$2b$12$GK3mZ5nJLWFAGoxM.5uQyuKjXLk2GaRqZcKB4/C2koESDBMmZ.iti",
+        "status": "active",
+        "createdAt": "2025-08-26T09:54:50.195Z",
+        "updatedAt": "2025-08-26T09:54:50.195Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ad846a8455bdee5f67a3b8",
+        "email": "owner@gmail.com",
+        "name": {
+          "firstName": "Owner",
+          "lastName": "User"
+        },
+        "role": "owner",
+        "password": "$2b$12$.AxvjnQ0uC4PneSrkG2aKeJQndYiCgPFH7avQCiPz7BaHg7Cs0KYK",
+        "status": "active",
+        "createdAt": "2025-08-26T09:54:50.590Z",
+        "updatedAt": "2025-08-26T09:54:50.590Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ad846a8455bdee5f67a3bb",
+        "email": "ruby@fluffnstuff.com",
+        "name": {
+          "firstName": "Ruby",
+          "lastName": "Stone"
+        },
+        "role": "owner",
+        "password": "$2b$12$nRpziYfdX.C4HVbptCqcj.AY6FId8evc8X4hvvkG.lJ9ae8WVDYpW",
+        "status": "active",
+        "createdAt": "2025-08-26T09:54:51.002Z",
+        "updatedAt": "2025-08-26T09:54:51.002Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ad846b8455bdee5f67a3be",
+        "email": "stan@fluffnstuff.com",
+        "name": {
+          "firstName": "Stan",
+          "lastName": "Marsh"
+        },
+        "role": "cashier",
+        "password": "$2b$12$ZI/gnd/fVS1Egv8Z0T5WF.70Szl04WTUZyhhDvWE3f1Np/jWmf5mK",
+        "status": "active",
+        "createdAt": "2025-08-26T09:54:51.420Z",
+        "updatedAt": "2025-08-26T09:54:51.420Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ad846b8455bdee5f67a3c1",
+        "email": "jeff@fluffnstuff.com",
+        "name": {
+          "firstName": "Jeff",
+          "lastName": "Wilson"
+        },
+        "role": "admin",
+        "password": "$2b$12$Jsr4F2ECSV8Yc2t8nMplE.ZRFFf1CnC67EsOaAhBK4k.WQLMvXaxi",
+        "status": "active",
+        "createdAt": "2025-08-26T09:54:51.854Z",
+        "updatedAt": "2025-08-26T09:54:51.854Z",
+        "__v": 0
+      }
+    ],
+    "products": [
+      {
+        "_id": "68adc3ac61739e2064aa6a8c",
+        "imageUrl": "Images\\1756218284617.jpg",
+        "name": "product test",
+        "sku": "FNS-P-001",
+        "categoryId": "68ad84eb2fa85fd924f4b5b6",
+        "price": {
+          "$numberDecimal": "50"
+        },
+        "lowStockThreshold": 5,
+        "description": "test 1",
+        "status": "active",
+        "supplierId": "68ada44d226f129fb1a8f15c",
+        "createdAt": "2025-08-26T14:24:44.756Z",
+        "updatedAt": "2025-08-30T14:46:07.106Z",
+        "__v": 0
+      },
+      {
+        "_id": "68adc3d061739e2064aa6a9f",
+        "imageUrl": "Images\\1756218320061.jpg",
+        "name": "test 2",
+        "sku": "test-2",
+        "categoryId": "68ad84d82fa85fd924f4b5ae",
+        "price": {
+          "$numberDecimal": "100"
+        },
+        "lowStockThreshold": 5,
+        "description": "test 2",
+        "status": "active",
+        "supplierId": "68ad8b9653cc8ecbf497714b",
+        "createdAt": "2025-08-26T14:25:20.192Z",
+        "updatedAt": "2025-08-26T14:25:20.192Z",
+        "__v": 0
+      },
+      {
+        "_id": "68adc3f361739e2064aa6ab2",
+        "imageUrl": "Images\\1756218355823.jpg",
+        "name": "Test 3",
+        "sku": "test-3",
+        "categoryId": "68ad84ce2fa85fd924f4b5a6",
+        "price": {
+          "$numberDecimal": "50"
+        },
+        "lowStockThreshold": 5,
+        "description": "test 3",
+        "status": "active",
+        "supplierId": "68ada44d226f129fb1a8f15c",
+        "createdAt": "2025-08-26T14:25:55.975Z",
+        "updatedAt": "2025-08-30T17:58:30.498Z",
+        "__v": 0
+      }
+    ],
+    "categories": [
+      {
+        "_id": "68ad84ce2fa85fd924f4b5a6",
+        "name": "ring",
+        "description": "Ring",
+        "isDeleted": false,
+        "__v": 0
+      },
+      {
+        "_id": "68ad84d82fa85fd924f4b5ae",
+        "name": "necklace",
+        "description": "necklace",
+        "isDeleted": false,
+        "__v": 0
+      },
+      {
+        "_id": "68ad84eb2fa85fd924f4b5b6",
+        "name": "hat",
+        "description": "Hat",
+        "isDeleted": false,
+        "__v": 0
+      }
+    ],
+    "inventories": [
+      {
+        "_id": "68ad903a25e97d6bd75223a2",
+        "productId": "68ad903925e97d6bd75223a0",
+        "quantity": 75,
+        "updatedAt": "2025-08-26T10:45:14.079Z",
+        "acquisitionPrice": {
+          "$numberDecimal": "50"
+        },
+        "status": "active",
+        "__v": 0
+      },
+      {
+        "_id": "68ada41a226f129fb1a8f14b",
+        "productId": "68ada41a226f129fb1a8f149",
+        "quantity": 50,
+        "updatedAt": "2025-08-26T12:10:02.622Z",
+        "acquisitionPrice": {
+          "$numberDecimal": "10"
+        },
+        "status": "active",
+        "__v": 0
+      },
+      {
+        "_id": "68ada44d226f129fb1a8f160",
+        "productId": "68ada44d226f129fb1a8f15e",
+        "quantity": 59,
+        "updatedAt": "2025-08-26T12:10:53.158Z",
+        "acquisitionPrice": {
+          "$numberDecimal": "5"
+        },
+        "status": "active",
+        "__v": 0
+      },
+      {
+        "_id": "68adc3ac61739e2064aa6a8e",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 60,
+        "updatedAt": "2025-08-29T08:40:13.464Z",
+        "acquisitionPrice": {
+          "$numberDecimal": "15"
+        },
+        "status": "active",
+        "__v": 0
+      },
+      {
+        "_id": "68adc3d061739e2064aa6aa1",
+        "productId": "68adc3d061739e2064aa6a9f",
+        "quantity": 48,
+        "updatedAt": "2025-08-29T08:41:16.163Z",
+        "acquisitionPrice": {
+          "$numberDecimal": "30"
+        },
+        "status": "active",
+        "__v": 0
+      },
+      {
+        "_id": "68adc3f461739e2064aa6ab4",
+        "productId": "68adc3f361739e2064aa6ab2",
+        "quantity": 42,
+        "updatedAt": "2025-08-30T18:03:17.595Z",
+        "acquisitionPrice": {
+          "$numberDecimal": "30"
+        },
+        "status": "active",
+        "__v": 0
+      }
+    ],
+    "inventoryRecords": [
+      {
+        "_id": "68adc3ac61739e2064aa6a90",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 50,
+        "prevQuantity": 0,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-26T17:38:04.534Z",
+        "__v": 0
+      },
+      {
+        "_id": "68adc3d061739e2064aa6aa3",
+        "productId": "68adc3d061739e2064aa6a9f",
+        "inventoryId": "68adc3d061739e2064aa6aa1",
+        "quantity": 50,
+        "prevQuantity": 0,
+        "acquisitionPrice": {
+          "$numberDecimal": "30"
+        },
+        "dateRecorded": "2025-08-26T14:25:20.286Z",
+        "__v": 0
+      },
+      {
+        "_id": "68adc3f461739e2064aa6ab6",
+        "productId": "68adc3f361739e2064aa6ab2",
+        "inventoryId": "68adc3f461739e2064aa6ab4",
+        "quantity": 50,
+        "prevQuantity": 0,
+        "acquisitionPrice": {
+          "$numberDecimal": "30"
+        },
+        "dateRecorded": "2025-08-26T14:25:56.065Z",
+        "__v": 0
+      },
+      {
+        "_id": "68adc45d44ffa0c4821dec7c",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 49,
+        "prevQuantity": 50,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-26T14:27:41.626Z",
+        "__v": 0
+      },
+      {
+        "_id": "68add9c444ffa0c4821decaa",
+        "productId": "68ad903925e97d6bd75223a0",
+        "inventoryId": "68ad903a25e97d6bd75223a2",
+        "quantity": 75,
+        "prevQuantity": 75,
+        "acquisitionPrice": {
+          "$numberDecimal": "50"
+        },
+        "dateRecorded": "2025-08-26T15:59:00.071Z",
+        "__v": 0
+      },
+      {
+        "_id": "68add9c444ffa0c4821decab",
+        "productId": "68ada41a226f129fb1a8f149",
+        "inventoryId": "68ada41a226f129fb1a8f14b",
+        "quantity": 50,
+        "prevQuantity": 50,
+        "acquisitionPrice": {
+          "$numberDecimal": "10"
+        },
+        "dateRecorded": "2025-08-26T15:59:00.071Z",
+        "__v": 0
+      },
+      {
+        "_id": "68add9c444ffa0c4821decac",
+        "productId": "68ada44d226f129fb1a8f15e",
+        "inventoryId": "68ada44d226f129fb1a8f160",
+        "quantity": 59,
+        "prevQuantity": 59,
+        "acquisitionPrice": {
+          "$numberDecimal": "5"
+        },
+        "dateRecorded": "2025-08-26T15:59:00.071Z",
+        "__v": 0
+      },
+      {
+        "_id": "68add9c444ffa0c4821decad",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 49,
+        "prevQuantity": 49,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-26T15:59:00.071Z",
+        "__v": 0
+      },
+      {
+        "_id": "68add9c444ffa0c4821decae",
+        "productId": "68adc3d061739e2064aa6a9f",
+        "inventoryId": "68adc3d061739e2064aa6aa1",
+        "quantity": 50,
+        "prevQuantity": 50,
+        "acquisitionPrice": {
+          "$numberDecimal": "30"
+        },
+        "dateRecorded": "2025-08-26T15:59:00.071Z",
+        "__v": 0
+      },
+      {
+        "_id": "68add9c444ffa0c4821decaf",
+        "productId": "68adc3f361739e2064aa6ab2",
+        "inventoryId": "68adc3f461739e2064aa6ab4",
+        "quantity": 50,
+        "prevQuantity": 50,
+        "acquisitionPrice": {
+          "$numberDecimal": "30"
+        },
+        "dateRecorded": "2025-08-26T15:59:00.071Z",
+        "__v": 0
+      },
+      {
+        "_id": "68adf042b2d54b4a0973f6f4",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 51,
+        "prevQuantity": 49,
+        "acquisitionPrice": {
+          "$numberDecimal": "0"
+        },
+        "dateRecorded": "2025-08-26T17:34:58.576Z",
+        "__v": 0
+      },
+      {
+        "_id": "68adf0fcbf97be51c9a08087",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 53,
+        "prevQuantity": 51,
+        "acquisitionPrice": {
+          "$numberDecimal": "15"
+        },
+        "dateRecorded": "2025-08-26T17:38:04.409Z",
+        "__v": 0
+      },
+      {
+        "_id": "68adf201bf97be51c9a080e2",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 54,
+        "prevQuantity": 53,
+        "acquisitionPrice": {
+          "$numberDecimal": "0"
+        },
+        "dateRecorded": "2025-08-26T17:42:25.357Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae06d9c91622dcd2afb753",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 51,
+        "prevQuantity": 54,
+        "acquisitionPrice": {
+          "$numberDecimal": "15"
+        },
+        "dateRecorded": "2025-08-26T19:11:21.158Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b6b",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 100,
+        "prevQuantity": 0,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-01T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b6c",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 95,
+        "prevQuantity": 100,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-02T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b6d",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 90,
+        "prevQuantity": 95,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-03T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b6e",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 85,
+        "prevQuantity": 90,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-04T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b6f",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 80,
+        "prevQuantity": 85,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-05T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b70",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 75,
+        "prevQuantity": 80,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-06T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b71",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 70,
+        "prevQuantity": 75,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-07T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b72",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 65,
+        "prevQuantity": 70,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-08T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b73",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 60,
+        "prevQuantity": 65,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-09T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b74",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 53,
+        "prevQuantity": 60,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-10T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b75",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 49,
+        "prevQuantity": 53,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-11T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b76",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 44,
+        "prevQuantity": 49,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-12T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b77",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 40,
+        "prevQuantity": 44,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-13T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b78",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 35,
+        "prevQuantity": 40,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-14T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b79",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 30,
+        "prevQuantity": 35,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-15T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b7a",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 25,
+        "prevQuantity": 30,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-16T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b7b",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 20,
+        "prevQuantity": 25,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-17T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b7c",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 15,
+        "prevQuantity": 20,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-18T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b7d",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 10,
+        "prevQuantity": 15,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-19T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b7e",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 0,
+        "prevQuantity": 10,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-20T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b7f",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 100,
+        "prevQuantity": 0,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-21T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b80",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 90,
+        "prevQuantity": 100,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-22T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b81",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 80,
+        "prevQuantity": 90,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-23T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b82",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 75,
+        "prevQuantity": 80,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-24T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b83",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 70,
+        "prevQuantity": 75,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-25T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b84",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 60,
+        "prevQuantity": 70,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-26T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b85",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 45,
+        "prevQuantity": 60,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-27T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b86",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 30,
+        "prevQuantity": 45,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-28T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b87",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 20,
+        "prevQuantity": 30,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-29T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b88",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 10,
+        "prevQuantity": 20,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-30T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b89",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 0,
+        "prevQuantity": 10,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-07-31T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b8a",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 50,
+        "prevQuantity": 0,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-01T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b8b",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 45,
+        "prevQuantity": 50,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-02T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b8c",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 40,
+        "prevQuantity": 45,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-03T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b8d",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 35,
+        "prevQuantity": 40,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-04T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b8e",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 30,
+        "prevQuantity": 35,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-05T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b8f",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 25,
+        "prevQuantity": 30,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-06T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b90",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 20,
+        "prevQuantity": 25,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-07T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b91",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 15,
+        "prevQuantity": 20,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-08T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b92",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 10,
+        "prevQuantity": 15,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-09T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b93",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 0,
+        "prevQuantity": 10,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-10T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b94",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 40,
+        "prevQuantity": 0,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-11T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b95",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 37,
+        "prevQuantity": 40,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-12T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b96",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 35,
+        "prevQuantity": 37,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-13T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b97",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 30,
+        "prevQuantity": 35,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-14T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b98",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 26,
+        "prevQuantity": 30,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-15T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b99",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 24,
+        "prevQuantity": 26,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-16T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b9a",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 22,
+        "prevQuantity": 24,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-17T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b9b",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 20,
+        "prevQuantity": 22,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-18T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b9c",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 18,
+        "prevQuantity": 20,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-19T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b9d",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 16,
+        "prevQuantity": 18,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-20T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b9e",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 14,
+        "prevQuantity": 16,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-21T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152b9f",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 10,
+        "prevQuantity": 14,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-22T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152ba0",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 8,
+        "prevQuantity": 10,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-23T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152ba1",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 6,
+        "prevQuantity": 8,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-24T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea041bc3a84784a152ba2",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 0,
+        "prevQuantity": 6,
+        "acquisitionPrice": {
+          "$numberDecimal": "12"
+        },
+        "dateRecorded": "2025-08-25T14:24:44.865Z",
+        "__v": 0
+      },
+      {
+        "_id": "68af2b446d679ac39d05e0fb",
+        "productId": "68ad903925e97d6bd75223a0",
+        "inventoryId": "68ad903a25e97d6bd75223a2",
+        "quantity": 75,
+        "prevQuantity": 75,
+        "acquisitionPrice": {
+          "$numberDecimal": "50"
+        },
+        "dateRecorded": "2025-08-27T15:59:00.087Z",
+        "__v": 0
+      },
+      {
+        "_id": "68af2b446d679ac39d05e0fc",
+        "productId": "68ada41a226f129fb1a8f149",
+        "inventoryId": "68ada41a226f129fb1a8f14b",
+        "quantity": 50,
+        "prevQuantity": 50,
+        "acquisitionPrice": {
+          "$numberDecimal": "10"
+        },
+        "dateRecorded": "2025-08-27T15:59:00.087Z",
+        "__v": 0
+      },
+      {
+        "_id": "68af2b446d679ac39d05e0fd",
+        "productId": "68ada44d226f129fb1a8f15e",
+        "inventoryId": "68ada44d226f129fb1a8f160",
+        "quantity": 59,
+        "prevQuantity": 59,
+        "acquisitionPrice": {
+          "$numberDecimal": "5"
+        },
+        "dateRecorded": "2025-08-27T15:59:00.088Z",
+        "__v": 0
+      },
+      {
+        "_id": "68af2b446d679ac39d05e0fe",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 51,
+        "prevQuantity": 51,
+        "acquisitionPrice": {
+          "$numberDecimal": "15"
+        },
+        "dateRecorded": "2025-08-27T15:59:00.088Z",
+        "__v": 0
+      },
+      {
+        "_id": "68af2b446d679ac39d05e0ff",
+        "productId": "68adc3d061739e2064aa6a9f",
+        "inventoryId": "68adc3d061739e2064aa6aa1",
+        "quantity": 50,
+        "prevQuantity": 50,
+        "acquisitionPrice": {
+          "$numberDecimal": "30"
+        },
+        "dateRecorded": "2025-08-27T15:59:00.088Z",
+        "__v": 0
+      },
+      {
+        "_id": "68af2b446d679ac39d05e100",
+        "productId": "68adc3f361739e2064aa6ab2",
+        "inventoryId": "68adc3f461739e2064aa6ab4",
+        "quantity": 50,
+        "prevQuantity": 50,
+        "acquisitionPrice": {
+          "$numberDecimal": "30"
+        },
+        "dateRecorded": "2025-08-27T15:59:00.088Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b1672e20573a31a3a1ff66",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 50,
+        "prevQuantity": 51,
+        "acquisitionPrice": {
+          "$numberDecimal": "15"
+        },
+        "dateRecorded": "2025-08-29T08:39:10.335Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b1676d20573a31a3a1ff93",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 48,
+        "prevQuantity": 50,
+        "acquisitionPrice": {
+          "$numberDecimal": "15"
+        },
+        "dateRecorded": "2025-08-29T08:40:13.515Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b167ac20573a31a3a1ffc1",
+        "productId": "68adc3d061739e2064aa6a9f",
+        "inventoryId": "68adc3d061739e2064aa6aa1",
+        "quantity": 48,
+        "prevQuantity": 50,
+        "acquisitionPrice": {
+          "$numberDecimal": "30"
+        },
+        "dateRecorded": "2025-08-29T08:41:16.216Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b30eafd3eb1522a447c319",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 60,
+        "prevQuantity": 48,
+        "acquisitionPrice": {
+          "$numberDecimal": "15"
+        },
+        "dateRecorded": "2025-08-30T14:46:07.221Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b31fc4d3eb1522a447c421",
+        "productId": "68ad903925e97d6bd75223a0",
+        "inventoryId": "68ad903a25e97d6bd75223a2",
+        "quantity": 75,
+        "prevQuantity": 75,
+        "acquisitionPrice": {
+          "$numberDecimal": "50"
+        },
+        "dateRecorded": "2025-08-30T15:59:00.072Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b31fc4d3eb1522a447c422",
+        "productId": "68ada41a226f129fb1a8f149",
+        "inventoryId": "68ada41a226f129fb1a8f14b",
+        "quantity": 50,
+        "prevQuantity": 50,
+        "acquisitionPrice": {
+          "$numberDecimal": "10"
+        },
+        "dateRecorded": "2025-08-30T15:59:00.072Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b31fc4d3eb1522a447c423",
+        "productId": "68ada44d226f129fb1a8f15e",
+        "inventoryId": "68ada44d226f129fb1a8f160",
+        "quantity": 59,
+        "prevQuantity": 59,
+        "acquisitionPrice": {
+          "$numberDecimal": "5"
+        },
+        "dateRecorded": "2025-08-30T15:59:00.072Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b31fc4d3eb1522a447c424",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "inventoryId": "68adc3ac61739e2064aa6a8e",
+        "quantity": 60,
+        "prevQuantity": 60,
+        "acquisitionPrice": {
+          "$numberDecimal": "15"
+        },
+        "dateRecorded": "2025-08-30T15:59:00.072Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b31fc4d3eb1522a447c425",
+        "productId": "68adc3d061739e2064aa6a9f",
+        "inventoryId": "68adc3d061739e2064aa6aa1",
+        "quantity": 48,
+        "prevQuantity": 48,
+        "acquisitionPrice": {
+          "$numberDecimal": "30"
+        },
+        "dateRecorded": "2025-08-30T15:59:00.072Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b31fc4d3eb1522a447c426",
+        "productId": "68adc3f361739e2064aa6ab2",
+        "inventoryId": "68adc3f461739e2064aa6ab4",
+        "quantity": 50,
+        "prevQuantity": 50,
+        "acquisitionPrice": {
+          "$numberDecimal": "30"
+        },
+        "dateRecorded": "2025-08-30T15:59:00.072Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b338f42adf0840167102a4",
+        "productId": "68adc3f361739e2064aa6ab2",
+        "inventoryId": "68adc3f461739e2064aa6ab4",
+        "quantity": 48,
+        "prevQuantity": 50,
+        "acquisitionPrice": {
+          "$numberDecimal": "30"
+        },
+        "dateRecorded": "2025-08-30T17:46:28.223Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b33cc22adf0840167104c1",
+        "productId": "68adc3f361739e2064aa6ab2",
+        "inventoryId": "68adc3f461739e2064aa6ab4",
+        "quantity": 45,
+        "prevQuantity": 48,
+        "acquisitionPrice": {
+          "$numberDecimal": "30"
+        },
+        "dateRecorded": "2025-08-30T18:02:42.917Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b33ce52adf0840167104cc",
+        "productId": "68adc3f361739e2064aa6ab2",
+        "inventoryId": "68adc3f461739e2064aa6ab4",
+        "quantity": 42,
+        "prevQuantity": 45,
+        "acquisitionPrice": {
+          "$numberDecimal": "30"
+        },
+        "dateRecorded": "2025-08-30T18:03:17.641Z",
+        "__v": 0
+      }
+    ],
+    "suppliers": [
+      {
+        "_id": "68ad8b9653cc8ecbf497714b",
+        "supplierName": "juan",
+        "status": "active",
+        "createdAt": "2025-08-26T10:25:26.613Z",
+        "updatedAt": "2025-08-26T10:25:26.613Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ad8bd953cc8ecbf4977160",
+        "supplierName": "peter",
+        "status": "active",
+        "createdAt": "2025-08-26T10:26:33.322Z",
+        "updatedAt": "2025-08-26T10:26:33.322Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ada44d226f129fb1a8f15c",
+        "supplierName": "pablo",
+        "status": "active",
+        "createdAt": "2025-08-26T12:10:53.050Z",
+        "updatedAt": "2025-08-26T12:10:53.050Z",
+        "__v": 0
+      }
+    ],
+    "stocks": [
+      {
+        "_id": "68adf033b2d54b4a0973f6db",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "supplierId": "68ad8bd953cc8ecbf4977160",
+        "supplierName": "peter",
+        "orderQuantity": 1,
+        "deliveredQuantity": 2,
+        "deliveryDate": "2025-08-27T00:00:00.000Z",
+        "deliveredDate": "2025-08-26T17:34:58.686Z",
+        "acquisitionPrice": {
+          "$numberDecimal": "15"
+        },
+        "status": "delivered",
+        "isDeleted": false,
+        "createdAt": "2025-08-26T17:34:43.128Z",
+        "__v": 0
+      },
+      {
+        "_id": "68adf0f0bf97be51c9a0806e",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "supplierId": "68ada44d226f129fb1a8f15c",
+        "supplierName": "pablo",
+        "orderQuantity": 1,
+        "deliveredQuantity": 2,
+        "deliveryDate": "2025-08-27T00:00:00.000Z",
+        "deliveredDate": "2025-08-26T17:38:04.534Z",
+        "acquisitionPrice": {
+          "$numberDecimal": "15"
+        },
+        "status": "delivered",
+        "isDeleted": false,
+        "createdAt": "2025-08-26T17:37:52.207Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea0eb679c1fbab86f4da9",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "supplierId": "68ada44d226f129fb1a8f15c",
+        "supplierName": "pablo",
+        "orderQuantity": 100,
+        "deliveredQuantity": 100,
+        "deliveryDate": "2025-08-01T00:00:00.000Z",
+        "deliveredDate": "2025-07-01T14:24:44.865Z",
+        "acquisitionPrice": {
+          "$numberDecimal": "15"
+        },
+        "status": "delivered",
+        "isDeleted": false,
+        "createdAt": "2025-08-26T17:37:52.207Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea153679c1fbab86f4daa",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "supplierId": "68ada44d226f129fb1a8f15c",
+        "supplierName": "pablo",
+        "orderQuantity": 100,
+        "deliveredQuantity": 100,
+        "deliveryDate": "2025-08-01T00:00:00.000Z",
+        "deliveredDate": "2025-07-21T09:38:04.534Z",
+        "acquisitionPrice": {
+          "$numberDecimal": "15"
+        },
+        "status": "delivered",
+        "isDeleted": false,
+        "createdAt": "2025-07-21T17:37:52.207Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea290679c1fbab86f4dac",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "supplierId": "68ada44d226f129fb1a8f15c",
+        "supplierName": "pablo",
+        "orderQuantity": 50,
+        "deliveredQuantity": 50,
+        "deliveryDate": "2025-08-02T00:00:00.000Z",
+        "deliveredDate": "2025-08-01T17:38:04.534Z",
+        "acquisitionPrice": {
+          "$numberDecimal": "15"
+        },
+        "status": "delivered",
+        "isDeleted": false,
+        "createdAt": "2025-08-01T17:37:52.207Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea2bb679c1fbab86f4dad",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "supplierId": "68ada44d226f129fb1a8f15c",
+        "supplierName": "pablo",
+        "orderQuantity": 40,
+        "deliveredQuantity": 40,
+        "deliveryDate": "2025-08-11T00:00:00.000Z",
+        "deliveredDate": "2025-08-11T17:38:04.534Z",
+        "acquisitionPrice": {
+          "$numberDecimal": "15"
+        },
+        "status": "delivered",
+        "isDeleted": false,
+        "createdAt": "2025-08-11T17:37:52.207Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aea2ff679c1fbab86f4dae",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "supplierId": "68ada44d226f129fb1a8f15c",
+        "supplierName": "pablo",
+        "orderQuantity": 50,
+        "deliveredQuantity": 50,
+        "deliveryDate": "2025-08-26T00:00:00.000Z",
+        "deliveredDate": "2025-08-26T17:38:04.534Z",
+        "acquisitionPrice": {
+          "$numberDecimal": "15"
+        },
+        "status": "delivered",
+        "isDeleted": false,
+        "createdAt": "2025-08-26T17:37:52.207Z",
+        "__v": 0
+      }
+    ],
+    "stockAdjustments": [
+      {
+        "_id": "68b30eafd3eb1522a447c31b",
+        "product": "68adc3ac61739e2064aa6a8c",
+        "previousQuantity": 48,
+        "adjustedQuantity": 60,
+        "change": {
+          "$numberDecimal": "12"
+        },
+        "reason": "restocked",
+        "note": "restock",
+        "adjustedBy": "68ad846a8455bdee5f67a3b5",
+        "date": "2025-08-30T14:46:07.282Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b338f42adf0840167102a6",
+        "product": "68adc3f361739e2064aa6ab2",
+        "previousQuantity": 50,
+        "adjustedQuantity": 48,
+        "change": {
+          "$numberDecimal": "-2"
+        },
+        "reason": "correction",
+        "note": "correction",
+        "adjustedBy": "68ad846a8455bdee5f67a3b5",
+        "date": "2025-08-30T17:46:28.273Z",
+        "__v": 0
+      }
+    ],
+    "transactions": [
+      {
+        "_id": "68adc45d44ffa0c4821dec79",
+        "receiptNum": "FNS-1756218461510",
+        "totalQty": 0,
+        "grossAmount": {
+          "$numberDecimal": "0.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "0.00"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "0.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "0.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "50.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "50.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-08-26T14:27:41.516Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae06d9c91622dcd2afb750",
+        "receiptNum": "FNS-1756235481044",
+        "totalQty": 3,
+        "grossAmount": {
+          "$numberDecimal": "150.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "133.93"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "16.07"
+        },
+        "totalAmount": {
+          "$numberDecimal": "150.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "150.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-08-26T19:11:21.049Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983bea43ffb9dc20bab0",
+        "receiptNum": "FNS-686117462",
+        "totalQty": 0,
+        "grossAmount": {
+          "$numberDecimal": "0.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "0.00"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "0.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "0.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "0.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-01T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983bea43ffb9dc20bab6",
+        "receiptNum": "FNS-376929990",
+        "totalQty": 5,
+        "grossAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "223.21"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "250.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-02T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983bea43ffb9dc20babb",
+        "receiptNum": "FNS-743108683",
+        "totalQty": 5,
+        "grossAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "223.21"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "250.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-03T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983bea43ffb9dc20bac0",
+        "receiptNum": "FNS-776662599",
+        "totalQty": 5,
+        "grossAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "223.21"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "250.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-04T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983bea43ffb9dc20bac5",
+        "receiptNum": "FNS-385936749",
+        "totalQty": 5,
+        "grossAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "223.21"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "250.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-05T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983cea43ffb9dc20baca",
+        "receiptNum": "FNS-724559439",
+        "totalQty": 5,
+        "grossAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "223.21"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "250.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-06T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983cea43ffb9dc20bacf",
+        "receiptNum": "FNS-855315447",
+        "totalQty": 5,
+        "grossAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "223.21"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "250.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-07T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983cea43ffb9dc20bad4",
+        "receiptNum": "FNS-398992779",
+        "totalQty": 5,
+        "grossAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "223.21"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "250.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-08T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983cea43ffb9dc20bad9",
+        "receiptNum": "FNS-790602024",
+        "totalQty": 5,
+        "grossAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "223.21"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "250.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-09T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983cea43ffb9dc20bade",
+        "receiptNum": "FNS-667286279",
+        "totalQty": 7,
+        "grossAmount": {
+          "$numberDecimal": "350.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "312.50"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "37.50"
+        },
+        "totalAmount": {
+          "$numberDecimal": "350.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "350.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-10T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983cea43ffb9dc20bae3",
+        "receiptNum": "FNS-347540166",
+        "totalQty": 4,
+        "grossAmount": {
+          "$numberDecimal": "200.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "178.57"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "21.43"
+        },
+        "totalAmount": {
+          "$numberDecimal": "200.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "200.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-11T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983cea43ffb9dc20bae8",
+        "receiptNum": "FNS-763663195",
+        "totalQty": 5,
+        "grossAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "223.21"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "250.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-12T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983cea43ffb9dc20baed",
+        "receiptNum": "FNS-355156988",
+        "totalQty": 4,
+        "grossAmount": {
+          "$numberDecimal": "200.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "178.57"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "21.43"
+        },
+        "totalAmount": {
+          "$numberDecimal": "200.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "200.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-13T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983dea43ffb9dc20baf2",
+        "receiptNum": "FNS-196036180",
+        "totalQty": 5,
+        "grossAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "223.21"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "250.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-14T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983dea43ffb9dc20baf7",
+        "receiptNum": "FNS-547271954",
+        "totalQty": 5,
+        "grossAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "223.21"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "250.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-15T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983dea43ffb9dc20bafc",
+        "receiptNum": "FNS-214955155",
+        "totalQty": 5,
+        "grossAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "223.21"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "250.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-16T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983dea43ffb9dc20bb01",
+        "receiptNum": "FNS-217645353",
+        "totalQty": 5,
+        "grossAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "223.21"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "250.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-17T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983dea43ffb9dc20bb06",
+        "receiptNum": "FNS-198734664",
+        "totalQty": 5,
+        "grossAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "223.21"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "250.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-18T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983dea43ffb9dc20bb0b",
+        "receiptNum": "FNS-905711756",
+        "totalQty": 5,
+        "grossAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "223.21"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "250.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-19T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983dea43ffb9dc20bb10",
+        "receiptNum": "FNS-101340627",
+        "totalQty": 10,
+        "grossAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "446.43"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "53.57"
+        },
+        "totalAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "500.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-20T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983dea43ffb9dc20bb15",
+        "receiptNum": "FNS-768261459",
+        "totalQty": 10,
+        "grossAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "446.43"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "53.57"
+        },
+        "totalAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "500.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-22T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983eea43ffb9dc20bb1a",
+        "receiptNum": "FNS-357579055",
+        "totalQty": 10,
+        "grossAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "446.43"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "53.57"
+        },
+        "totalAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "500.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-23T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983eea43ffb9dc20bb1f",
+        "receiptNum": "FNS-217813093",
+        "totalQty": 5,
+        "grossAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "223.21"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "250.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-24T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983eea43ffb9dc20bb24",
+        "receiptNum": "FNS-587595102",
+        "totalQty": 5,
+        "grossAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "223.21"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "250.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-25T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983eea43ffb9dc20bb29",
+        "receiptNum": "FNS-399402234",
+        "totalQty": 10,
+        "grossAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "446.43"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "53.57"
+        },
+        "totalAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "500.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-26T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983eea43ffb9dc20bb2e",
+        "receiptNum": "FNS-012745374",
+        "totalQty": 15,
+        "grossAmount": {
+          "$numberDecimal": "750.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "669.64"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "80.36"
+        },
+        "totalAmount": {
+          "$numberDecimal": "750.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "750.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-27T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983eea43ffb9dc20bb33",
+        "receiptNum": "FNS-706339337",
+        "totalQty": 15,
+        "grossAmount": {
+          "$numberDecimal": "750.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "669.64"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "80.36"
+        },
+        "totalAmount": {
+          "$numberDecimal": "750.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "750.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-28T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983eea43ffb9dc20bb38",
+        "receiptNum": "FNS-389107445",
+        "totalQty": 10,
+        "grossAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "446.43"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "53.57"
+        },
+        "totalAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "500.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-29T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983eea43ffb9dc20bb3d",
+        "receiptNum": "FNS-601381338",
+        "totalQty": 10,
+        "grossAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "446.43"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "53.57"
+        },
+        "totalAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "500.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-30T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983fea43ffb9dc20bb42",
+        "receiptNum": "FNS-623677062",
+        "totalQty": 10,
+        "grossAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "446.43"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "53.57"
+        },
+        "totalAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "500.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "0.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-07-31T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b1672e20573a31a3a1ff63",
+        "receiptNum": "FNS-1756456750191",
+        "totalQty": 1,
+        "grossAmount": {
+          "$numberDecimal": "50.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "44.64"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "5.36"
+        },
+        "totalAmount": {
+          "$numberDecimal": "50.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "100.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "50.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-08-29T08:39:10.204Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b1676d20573a31a3a1ff90",
+        "receiptNum": "FNS-1756456813414",
+        "totalQty": 2,
+        "grossAmount": {
+          "$numberDecimal": "100.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "89.29"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "10.71"
+        },
+        "totalAmount": {
+          "$numberDecimal": "100.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "200.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "100.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-08-29T08:40:13.415Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b167ac20573a31a3a1ffbe",
+        "receiptNum": "FNS-1756456876026",
+        "totalQty": 2,
+        "grossAmount": {
+          "$numberDecimal": "200.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "178.57"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "21.43"
+        },
+        "totalAmount": {
+          "$numberDecimal": "200.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "300.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "100.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-08-29T08:41:16.073Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b33cc22adf0840167104be",
+        "receiptNum": "FNS-1756576962183",
+        "totalQty": 3,
+        "grossAmount": {
+          "$numberDecimal": "150.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "133.93"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "16.07"
+        },
+        "totalAmount": {
+          "$numberDecimal": "150.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "500.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "350.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-08-30T18:02:42.822Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b33ce52adf0840167104c9",
+        "receiptNum": "FNS-1756576997550",
+        "totalQty": 3,
+        "grossAmount": {
+          "$numberDecimal": "150.00"
+        },
+        "vatableAmount": {
+          "$numberDecimal": "133.93"
+        },
+        "vatExemptSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatZeroRatedSales": {
+          "$numberDecimal": "0.00"
+        },
+        "vatAmount": {
+          "$numberDecimal": "16.07"
+        },
+        "totalAmount": {
+          "$numberDecimal": "150.00"
+        },
+        "totalDiscount": {
+          "$numberDecimal": "0.00"
+        },
+        "discountType": "none",
+        "paymentMethod": "cash",
+        "cash": {
+          "$numberDecimal": "500.00"
+        },
+        "referenceNumber": null,
+        "pwdId": null,
+        "seniorId": null,
+        "change": {
+          "$numberDecimal": "350.00"
+        },
+        "cashier": "68ad846a8455bdee5f67a3b5",
+        "isDeleted": false,
+        "createdAt": "2025-08-30T18:03:17.550Z",
+        "__v": 0
+      }
+    ],
+    "transactionItems": [
+      {
+        "_id": "68adc45d44ffa0c4821dec7e",
+        "transactionId": "68adc45d44ffa0c4821dec79",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 0,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "0.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "0.00"
+        },
+        "netAmount": {
+          "$numberDecimal": "0.00"
+        },
+        "isDeleted": false,
+        "isRefunded": true,
+        "createdAt": "2025-08-26T14:27:41.685Z",
+        "updatedAt": "2025-08-26T17:42:25.207Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae06d9c91622dcd2afb755",
+        "transactionId": "68ae06d9c91622dcd2afb750",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 3,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "150.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "16.07"
+        },
+        "netAmount": {
+          "$numberDecimal": "150.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-08-26T19:11:21.212Z",
+        "updatedAt": "2025-08-26T19:11:21.212Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983bea43ffb9dc20bab3",
+        "transactionId": "68ae983bea43ffb9dc20bab0",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 0,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "0.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "0.00"
+        },
+        "netAmount": {
+          "$numberDecimal": "0.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-01T00:00:00.000Z",
+        "updatedAt": "2025-07-01T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983bea43ffb9dc20bab8",
+        "transactionId": "68ae983bea43ffb9dc20bab6",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 5,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "netAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-02T00:00:00.000Z",
+        "updatedAt": "2025-07-02T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983bea43ffb9dc20babd",
+        "transactionId": "68ae983bea43ffb9dc20babb",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 5,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "netAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-03T00:00:00.000Z",
+        "updatedAt": "2025-07-03T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983bea43ffb9dc20bac2",
+        "transactionId": "68ae983bea43ffb9dc20bac0",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 5,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "netAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-04T00:00:00.000Z",
+        "updatedAt": "2025-07-04T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983bea43ffb9dc20bac7",
+        "transactionId": "68ae983bea43ffb9dc20bac5",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 5,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "netAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-05T00:00:00.000Z",
+        "updatedAt": "2025-07-05T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983cea43ffb9dc20bacc",
+        "transactionId": "68ae983cea43ffb9dc20baca",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 5,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "netAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-06T00:00:00.000Z",
+        "updatedAt": "2025-07-06T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983cea43ffb9dc20bad1",
+        "transactionId": "68ae983cea43ffb9dc20bacf",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 5,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "netAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-07T00:00:00.000Z",
+        "updatedAt": "2025-07-07T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983cea43ffb9dc20bad6",
+        "transactionId": "68ae983cea43ffb9dc20bad4",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 5,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "netAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-08T00:00:00.000Z",
+        "updatedAt": "2025-07-08T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983cea43ffb9dc20badb",
+        "transactionId": "68ae983cea43ffb9dc20bad9",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 5,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "netAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-09T00:00:00.000Z",
+        "updatedAt": "2025-07-09T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983cea43ffb9dc20bae0",
+        "transactionId": "68ae983cea43ffb9dc20bade",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 7,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "350.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "37.50"
+        },
+        "netAmount": {
+          "$numberDecimal": "350.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-10T00:00:00.000Z",
+        "updatedAt": "2025-07-10T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983cea43ffb9dc20bae5",
+        "transactionId": "68ae983cea43ffb9dc20bae3",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 4,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "200.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "21.43"
+        },
+        "netAmount": {
+          "$numberDecimal": "200.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-11T00:00:00.000Z",
+        "updatedAt": "2025-07-11T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983cea43ffb9dc20baea",
+        "transactionId": "68ae983cea43ffb9dc20bae8",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 5,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "netAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-12T00:00:00.000Z",
+        "updatedAt": "2025-07-12T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983cea43ffb9dc20baef",
+        "transactionId": "68ae983cea43ffb9dc20baed",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 4,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "200.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "21.43"
+        },
+        "netAmount": {
+          "$numberDecimal": "200.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-13T00:00:00.000Z",
+        "updatedAt": "2025-07-13T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983dea43ffb9dc20baf4",
+        "transactionId": "68ae983dea43ffb9dc20baf2",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 5,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "netAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-14T00:00:00.000Z",
+        "updatedAt": "2025-07-14T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983dea43ffb9dc20baf9",
+        "transactionId": "68ae983dea43ffb9dc20baf7",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 5,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "netAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-15T00:00:00.000Z",
+        "updatedAt": "2025-07-15T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983dea43ffb9dc20bafe",
+        "transactionId": "68ae983dea43ffb9dc20bafc",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 5,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "netAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-16T00:00:00.000Z",
+        "updatedAt": "2025-07-16T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983dea43ffb9dc20bb03",
+        "transactionId": "68ae983dea43ffb9dc20bb01",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 5,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "netAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-17T00:00:00.000Z",
+        "updatedAt": "2025-07-17T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983dea43ffb9dc20bb08",
+        "transactionId": "68ae983dea43ffb9dc20bb06",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 5,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "netAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-18T00:00:00.000Z",
+        "updatedAt": "2025-07-18T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983dea43ffb9dc20bb0d",
+        "transactionId": "68ae983dea43ffb9dc20bb0b",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 5,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "netAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-19T00:00:00.000Z",
+        "updatedAt": "2025-07-19T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983dea43ffb9dc20bb12",
+        "transactionId": "68ae983dea43ffb9dc20bb10",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 10,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "53.57"
+        },
+        "netAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-20T00:00:00.000Z",
+        "updatedAt": "2025-07-20T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983dea43ffb9dc20bb17",
+        "transactionId": "68ae983dea43ffb9dc20bb15",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 10,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "53.57"
+        },
+        "netAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-22T00:00:00.000Z",
+        "updatedAt": "2025-07-22T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983eea43ffb9dc20bb1c",
+        "transactionId": "68ae983eea43ffb9dc20bb1a",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 10,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "53.57"
+        },
+        "netAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-23T00:00:00.000Z",
+        "updatedAt": "2025-07-23T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983eea43ffb9dc20bb21",
+        "transactionId": "68ae983eea43ffb9dc20bb1f",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 5,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "netAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-24T00:00:00.000Z",
+        "updatedAt": "2025-07-24T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983eea43ffb9dc20bb26",
+        "transactionId": "68ae983eea43ffb9dc20bb24",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 5,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "26.79"
+        },
+        "netAmount": {
+          "$numberDecimal": "250.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-25T00:00:00.000Z",
+        "updatedAt": "2025-07-25T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983eea43ffb9dc20bb2b",
+        "transactionId": "68ae983eea43ffb9dc20bb29",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 10,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "53.57"
+        },
+        "netAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-26T00:00:00.000Z",
+        "updatedAt": "2025-07-26T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983eea43ffb9dc20bb30",
+        "transactionId": "68ae983eea43ffb9dc20bb2e",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 15,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "750.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "80.36"
+        },
+        "netAmount": {
+          "$numberDecimal": "750.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-27T00:00:00.000Z",
+        "updatedAt": "2025-07-27T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983eea43ffb9dc20bb35",
+        "transactionId": "68ae983eea43ffb9dc20bb33",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 15,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "750.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "80.36"
+        },
+        "netAmount": {
+          "$numberDecimal": "750.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-28T00:00:00.000Z",
+        "updatedAt": "2025-07-28T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983eea43ffb9dc20bb3a",
+        "transactionId": "68ae983eea43ffb9dc20bb38",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 10,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "53.57"
+        },
+        "netAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-29T00:00:00.000Z",
+        "updatedAt": "2025-07-29T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983eea43ffb9dc20bb3f",
+        "transactionId": "68ae983eea43ffb9dc20bb3d",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 10,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "53.57"
+        },
+        "netAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-30T00:00:00.000Z",
+        "updatedAt": "2025-07-30T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae983fea43ffb9dc20bb44",
+        "transactionId": "68ae983fea43ffb9dc20bb42",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 10,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "53.57"
+        },
+        "netAmount": {
+          "$numberDecimal": "500.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-07-31T00:00:00.000Z",
+        "updatedAt": "2025-07-31T00:00:00.000Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b1672e20573a31a3a1ff68",
+        "transactionId": "68b1672e20573a31a3a1ff63",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 1,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "50.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "5.36"
+        },
+        "netAmount": {
+          "$numberDecimal": "50.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-08-29T08:39:10.398Z",
+        "updatedAt": "2025-08-29T08:39:10.398Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b1676d20573a31a3a1ff95",
+        "transactionId": "68b1676d20573a31a3a1ff90",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 2,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "100.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "10.71"
+        },
+        "netAmount": {
+          "$numberDecimal": "100.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-08-29T08:40:13.571Z",
+        "updatedAt": "2025-08-29T08:40:13.571Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b167ac20573a31a3a1ffc3",
+        "transactionId": "68b167ac20573a31a3a1ffbe",
+        "productId": "68adc3d061739e2064aa6a9f",
+        "quantity": 2,
+        "price": {
+          "$numberDecimal": "100.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "200.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "21.43"
+        },
+        "netAmount": {
+          "$numberDecimal": "200.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "createdAt": "2025-08-29T08:41:16.266Z",
+        "updatedAt": "2025-08-30T11:25:20.501Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b33cc22adf0840167104c3",
+        "transactionId": "68b33cc22adf0840167104be",
+        "productId": "68adc3f361739e2064aa6ab2",
+        "quantity": 3,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "150.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "16.07"
+        },
+        "netAmount": {
+          "$numberDecimal": "150.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "__v": 0,
+        "createdAt": "2025-08-30T18:02:42.968Z",
+        "updatedAt": "2025-08-30T18:02:42.968Z"
+      },
+      {
+        "_id": "68b33ce52adf0840167104ce",
+        "transactionId": "68b33ce52adf0840167104c9",
+        "productId": "68adc3f361739e2064aa6ab2",
+        "quantity": 3,
+        "price": {
+          "$numberDecimal": "50.00"
+        },
+        "totalAmount": {
+          "$numberDecimal": "150.00"
+        },
+        "vatType": "vatable",
+        "vatAmount": {
+          "$numberDecimal": "16.07"
+        },
+        "netAmount": {
+          "$numberDecimal": "150.00"
+        },
+        "isDeleted": false,
+        "isRefunded": false,
+        "__v": 0,
+        "createdAt": "2025-08-30T18:03:17.686Z",
+        "updatedAt": "2025-08-30T18:03:17.686Z"
+      }
+    ],
+    "refunds": [
+      {
+        "_id": "68adf201bf97be51c9a080e5",
+        "transactionItemId": "68adc45d44ffa0c4821dec7e",
+        "productId": "68adc3ac61739e2064aa6a8c",
+        "quantity": 1,
+        "refundPrice": {
+          "$numberDecimal": "15"
+        },
+        "refundedAt": "2025-08-26T17:42:25.505Z",
+        "reason": "customer request",
+        "note": "test",
+        "isDeleted": false,
+        "isDiscounted": false,
+        "__v": 0
+      }
+    ],
+    "actionLogs": [
+      {
+        "_id": "68ad84ab2fa85fd924f4b57d",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Login",
+        "description": "User Admin User (admin@gmail.com) logged in successfully.",
+        "timestamp": "2025-08-26T09:55:55.698Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ad84ce2fa85fd924f4b5a8",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Category",
+        "description": "Created category: Ring. Description: Ring",
+        "timestamp": "2025-08-26T09:56:30.067Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ad84d82fa85fd924f4b5b0",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Category",
+        "description": "Created category: Necklace. Description: necklace",
+        "timestamp": "2025-08-26T09:56:40.120Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ad84eb2fa85fd924f4b5b8",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Category",
+        "description": "Created category: Hat. Description: Hat",
+        "timestamp": "2025-08-26T09:56:59.561Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ad8b9653cc8ecbf4977153",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Product",
+        "description": "Created Product \"Green\" (SKU: FNS-G-001), Initial Quantity: 50, Price: ₱10.00",
+        "timestamp": "2025-08-26T10:25:26.901Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ad8bd953cc8ecbf4977168",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Product",
+        "description": "Created Product \"Necklace\" (SKU: FNS-N-001), Initial Quantity: 50, Price: ₱50.00",
+        "timestamp": "2025-08-26T10:26:33.601Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ad8c4ea3ca416b3941c021",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Product",
+        "description": "Created Product \"Green hat\" (SKU: FNS-G-001), Initial Quantity: 50, Price: ₱100.00",
+        "timestamp": "2025-08-26T10:28:30.337Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ad8d3e434b3cb63b2513fc",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Product",
+        "description": "Created Product \"Green hat\" (SKU: FNS-G-001), Initial Quantity: 100, Price: ₱100.00",
+        "timestamp": "2025-08-26T10:32:30.956Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ad8dd4284ec0ba7a112027",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Update Product",
+        "description": "Updated Product \"Green hat\" (SKU: FNS-G-001): Quantity: 100 → 60",
+        "timestamp": "2025-08-26T10:35:00.889Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ad903a25e97d6bd75223a6",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Product",
+        "description": "Created Product \"Green hat\" (SKU: FNS-G-001), Initial Quantity: 50, Price: ₱100.00",
+        "timestamp": "2025-08-26T10:45:14.211Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ad90ae25e97d6bd75223d4",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Update Product",
+        "description": "Updated Product \"Green hat\" (SKU: FNS-G-001): Quantity: 50 → 25",
+        "timestamp": "2025-08-26T10:47:10.117Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ad919ef625334215e8459f",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Update Product",
+        "description": "Updated Product \"Green hat\" (SKU: FNS-G-001): Quantity: 50 → 75",
+        "timestamp": "2025-08-26T10:51:10.522Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ada41a226f129fb1a8f14f",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Product",
+        "description": "Created Product \"purple\" (SKU: FNS-P-001), Initial Quantity: 50, Price: ₱500.00",
+        "timestamp": "2025-08-26T12:10:02.725Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ada44d226f129fb1a8f164",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Product",
+        "description": "Created Product \"Purple 2\" (SKU: FNS-P-002), Initial Quantity: 59, Price: ₱30.00",
+        "timestamp": "2025-08-26T12:10:53.258Z",
+        "__v": 0
+      },
+      {
+        "_id": "68adc3ac61739e2064aa6a92",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Product",
+        "description": "Created Product \"product test\" (SKU: FNS-P-001), Initial Quantity: 50, Price: ₱50.00",
+        "timestamp": "2025-08-26T14:24:44.925Z",
+        "__v": 0
+      },
+      {
+        "_id": "68adc3d061739e2064aa6aa5",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Product",
+        "description": "Created Product \"test 2\" (SKU: test-2), Initial Quantity: 50, Price: ₱100.00",
+        "timestamp": "2025-08-26T14:25:20.330Z",
+        "__v": 0
+      },
+      {
+        "_id": "68adc3f461739e2064aa6ab8",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Product",
+        "description": "Created Product \"Test 3\" (SKU: test-3), Initial Quantity: 50, Price: ₱50.00",
+        "timestamp": "2025-08-26T14:25:56.111Z",
+        "__v": 0
+      },
+      {
+        "_id": "68adc45d44ffa0c4821dec80",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Transaction",
+        "description": "Transaction created. Payment: cash, Discount: none. Items: 1. product test - Qty: 1, Price: ₱50",
+        "timestamp": "2025-08-26T14:27:41.819Z",
+        "__v": 0
+      },
+      {
+        "_id": "68adf033b2d54b4a0973f6dd",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Order Stock",
+        "description": "Ordered 1 units of \"product test\" from supplier \"peter\" at price 15",
+        "timestamp": "2025-08-26T17:34:43.192Z",
+        "__v": 0
+      },
+      {
+        "_id": "68adf042b2d54b4a0973f6fa",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Update Stock",
+        "description": "Stock delivered for Product Name: product test. Delivered Quantity: 2. Updated Inventory: 51. Supplier: peter",
+        "timestamp": "2025-08-26T17:34:58.833Z",
+        "__v": 0
+      },
+      {
+        "_id": "68adf0f0bf97be51c9a08070",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Order Stock",
+        "description": "Ordered 1 units of \"product test\" from supplier \"pablo\" at price 15",
+        "timestamp": "2025-08-26T17:37:52.267Z",
+        "__v": 0
+      },
+      {
+        "_id": "68adf0fcbf97be51c9a0808d",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Update Stock",
+        "description": "Stock delivered for Product Name: product test. Delivered Quantity: 2. Updated Inventory: 53. Supplier: pablo",
+        "timestamp": "2025-08-26T17:38:04.679Z",
+        "__v": 0
+      },
+      {
+        "_id": "68adf201bf97be51c9a080ea",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Refund Product",
+        "description": "Refund processed. Product: product test, Quantity: 1, Reason: customer request, Note: test",
+        "timestamp": "2025-08-26T17:42:25.740Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae06d9c91622dcd2afb757",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Transaction",
+        "description": "Transaction created. Payment: cash, Discount: none. Items: 1. product test - Qty: 3, Price: ₱50",
+        "timestamp": "2025-08-26T19:11:21.329Z",
+        "__v": 0
+      },
+      {
+        "_id": "68ae80cc1e788ae7e960909e",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Login",
+        "description": "User Admin User (admin@gmail.com) logged in successfully.",
+        "timestamp": "2025-08-27T03:51:40.044Z",
+        "__v": 0
+      },
+      {
+        "_id": "68aeb7c6af9e38b286afc47f",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Login",
+        "description": "User Admin User (admin@gmail.com) logged in successfully.",
+        "timestamp": "2025-08-27T07:46:14.443Z",
+        "__v": 0
+      },
+      {
+        "_id": "68af1d962ddc7acda73f3478",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Login",
+        "description": "User Admin User (admin@gmail.com) logged in successfully.",
+        "timestamp": "2025-08-27T15:00:38.747Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b03f113c45634c591bee33",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Login",
+        "description": "User Admin User (admin@gmail.com) logged in successfully.",
+        "timestamp": "2025-08-28T11:35:45.351Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b1668520573a31a3a1ff0b",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Login",
+        "description": "User Admin User (admin@gmail.com) logged in successfully.",
+        "timestamp": "2025-08-29T08:36:21.239Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b1672e20573a31a3a1ff6a",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Transaction",
+        "description": "Transaction created. Payment: cash, Discount: none. Items: 1. product test - Qty: 1, Price: ₱50",
+        "timestamp": "2025-08-29T08:39:10.501Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b1676d20573a31a3a1ff97",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Transaction",
+        "description": "Transaction created. Payment: cash, Discount: none. Items: 1. product test - Qty: 2, Price: ₱50",
+        "timestamp": "2025-08-29T08:40:13.671Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b167ac20573a31a3a1ffc5",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Transaction",
+        "description": "Transaction created. Payment: cash, Discount: none. Items: 1. test 2 - Qty: 2, Price: ₱100",
+        "timestamp": "2025-08-29T08:41:16.392Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b2bccd48e15adc8fcf9a26",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Login",
+        "description": "User Admin User (admin@gmail.com) logged in successfully.",
+        "timestamp": "2025-08-30T08:56:45.889Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b2d8bf61747433565e7a98",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Login",
+        "description": "User Admin User (admin@gmail.com) logged in successfully.",
+        "timestamp": "2025-08-30T10:55:59.937Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b30e5af2b5cecfdc433ecc",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Login",
+        "description": "User Admin User (admin@gmail.com) logged in successfully.",
+        "timestamp": "2025-08-30T14:44:42.405Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b30e6df2b5cecfdc433ecf",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Login",
+        "description": "User Admin User (admin@gmail.com) logged in successfully.",
+        "timestamp": "2025-08-30T14:45:01.287Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b30e80d3eb1522a447c2df",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Login",
+        "description": "User Admin User (admin@gmail.com) logged in successfully.",
+        "timestamp": "2025-08-30T14:45:20.831Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b30eafd3eb1522a447c31e",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Update Product",
+        "description": "Updated Product \"product test\" (SKU: FNS-P-001): Quantity: 48 → 60",
+        "timestamp": "2025-08-30T14:46:07.387Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b338f42adf0840167102a9",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Update Product",
+        "description": "Updated Product \"Test 3\" (SKU: test-3): Quantity: 50 → 48",
+        "timestamp": "2025-08-30T17:46:28.361Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b33cc32adf0840167104c5",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Transaction",
+        "description": "Transaction created. Payment: cash, Discount: none. Items: 1. Test 3 - Qty: 3, Price: ₱50",
+        "timestamp": "2025-08-30T18:02:43.066Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b33ce52adf0840167104d0",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Create Transaction",
+        "description": "Transaction created. Payment: cash, Discount: none. Items: 1. Test 3 - Qty: 3, Price: ₱50",
+        "timestamp": "2025-08-30T18:03:17.783Z",
+        "__v": 0
+      },
+      {
+        "_id": "68b548cb6f682a7fe23a2468",
+        "user": "68ad846a8455bdee5f67a3b5",
+        "action": "Login",
+        "description": "User Admin User (admin@gmail.com) logged in successfully.",
+        "timestamp": "2025-09-01T07:18:35.344Z",
+        "__v": 0
+      }
+    ]
+  }
+}

@@ -41,6 +41,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     loadOrders({}, 1);
   };
 
+  // Helper to truncate text
+  function truncateText(text, limit = 5) {
+    if (!text) return '';
+    const plain = text.replace(/<\/?[^>]+(>|$)/g, ''); // remove HTML tags
+    if (plain.length <= limit) return plain;
+    return plain.slice(0, limit) + '...';
+  }
+
   // -------------------- LOAD CATEGORIES --------------------
   async function loadCategories() {
     try {
@@ -121,6 +129,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
+  function truncateText(text, limit = 5) {
+    if (!text) return '';
+    const plain = text.replace(/<\/?[^>]+(>|$)/g, ''); // remove HTML tags
+    if (plain.length <= limit) return plain;
+    return plain.slice(0, limit) + '...';
+  }
+
   // -------------------- RENDER ORDERS --------------------
   function renderOrders(list = []) {
     tableBody.innerHTML = '';
@@ -173,23 +188,70 @@ document.addEventListener('DOMContentLoaded', async () => {
            </div>`
           : '<span style="color:#6b7280;">Completed</span>';
 
+      // Prepare full and truncated versions
+      const fullProductName = product.name || 'No Name';
+      const truncatedProductName = truncateText(fullProductName, 25);
+
+      const fullSupplierName = order.supplierName || 'No Supplier';
+      const truncatedSupplierName = truncateText(fullSupplierName, 20);
+
       row.innerHTML = `
-      <td><img src="${product.imageUrl || '/assets/noimage.png'}" alt="${
-        product.name || ''
-      }" width="50"/></td>
-      <td>${product.name || ''}</td>
+      <td><img src="${
+        product.imageUrl || '/assets/noimage.png'
+      }" alt="${fullProductName}" width="50"  onerror="this.onerror=null;this.src='../assets/noimage.png';"
+      style="width:50px;height:50px;object-fit:cover;"/></td>
+      <td title="${fullProductName}">
+        <span class="product-name-text">${truncatedProductName}</span>
+        ${
+          fullProductName.length > 25
+            ? `<button class="toggle-name-btn">Read more</button>`
+            : ''
+        }
+      </td>
       <td>${order.orderQuantity}</td>
       <td>${order.deliveredQuantity}</td>
       <td>₱${Number(
         order.acquisitionPrice?.$numberDecimal || order.acquisitionPrice || 0
       ).toFixed(2)}</td>
-      <td>${order.supplierName}</td>
+      <td title="${fullSupplierName}">
+        <span class="supplier-name-text">${truncatedSupplierName}</span>
+        ${
+          fullSupplierName.length > 20
+            ? `<button class="toggle-supplier-btn">Read more</button>`
+            : ''
+        }
+      </td>
       <td>${new Date(order.deliveryDate).toLocaleDateString()}</td>
       <td>${deliveredDate}</td>
       <td>${deliveryStatus}</td>
       <td>${actionContent}</td>
     `;
-      tableBody.appendChild(row);
+      tableBody.appendChild(row); // ------------------- Toggle handlers -------------------
+      const nameBtn = row.querySelector('.toggle-name-btn');
+      if (nameBtn) {
+        const nameSpan = row.querySelector('.product-name-text');
+        let expanded = false;
+        nameBtn.addEventListener('click', () => {
+          expanded = !expanded;
+          nameSpan.textContent = expanded
+            ? fullProductName
+            : truncatedProductName;
+          nameBtn.textContent = expanded ? 'Read less' : 'Read more';
+        });
+      }
+
+      const supplierBtn = row.querySelector('.toggle-supplier-btn');
+      if (supplierBtn) {
+        const supplierSpan = row.querySelector('.supplier-name-text');
+        let expanded = false;
+        supplierBtn.addEventListener('click', () => {
+          expanded = !expanded;
+          supplierSpan.textContent = expanded
+            ? fullSupplierName
+            : truncatedSupplierName;
+          supplierBtn.textContent = expanded ? 'Read less' : 'Read more';
+        });
+      }
     });
 
     attachRowActions();

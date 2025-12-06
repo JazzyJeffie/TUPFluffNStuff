@@ -33,12 +33,14 @@ main {
 .container {
   width: calc(100% - 80px);
   transition: width 0.3s;
-  margin: 0 auto;
   background-color: var(--sub-color);
   border-radius: 8px;
   padding: 2rem;
   box-shadow: 0 4px 4px var(--border-color1);
   align-items: center;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  margin-left: 64px; /* initial collapsed sidebar offset */
+  box-sizing: border-box;
 }
 
 .container h1 {
@@ -61,6 +63,8 @@ main {
   flex-direction: column;
   font-size: 0.9rem;
   color: var(--text-dark);
+  flex: 1 1 auto; /* allow labels to share space */
+  max-width: 200px; /* prevent overly wide labels */
 }
 
 .filters input,
@@ -70,7 +74,10 @@ main {
   border-radius: var(--radius);
   border: 1px solid var(--border-color);
   background-color: var(--main-color);
-  min-width: 160px;
+  min-width: 60px;
+  max-width: 200px; /* <-- set a max width */
+  width: 100%; /* <-- fill label width */
+  box-sizing: border-box;
   color: var(--text-dark);
 }
 

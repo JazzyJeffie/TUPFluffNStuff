@@ -177,16 +177,26 @@ document.addEventListener('DOMContentLoaded', () => {
       multiOrderProducts = [];
 
       allProducts.forEach((p, index) => {
+        const fullName = p.name || 'No Name';
+        const truncatedName = truncateText(fullName, 20);
         const tr = document.createElement('tr');
+
         tr.innerHTML = `
-        <td><input type="checkbox" class="order-product-checkbox" data-index="${index}"/></td>
-        <td>${p.name}</td>
-        <td>${p.quantity}</td>
-        <td><input type="number" min="1" value="1" class="order-quantity-input" data-index="${index}" style="display:none;"/></td>
-        <td><input type="number" min="0" step="0.01" value="${
-          p.acquisitionPrice || 0
-        }" class="acquisition-input" data-index="${index}" style="display:none;"/></td>
-      `;
+    <td><input type="checkbox" class="order-product-checkbox" data-index="${index}"/></td>
+    <td>
+      <span class="order-name-text">${truncatedName}</span>
+      ${
+        fullName.length > 20
+          ? `<button class="toggle-order-name-btn">Read more</button>`
+          : ''
+      }
+    </td>
+    <td>${p.quantity}</td>
+    <td><input type="number" min="1" value="1" class="order-quantity-input" data-index="${index}" style="display:none;"/></td>
+    <td><input type="number" min="0" step="0.01" value="${
+      p.acquisitionPrice || 0
+    }" class="acquisition-input" data-index="${index}" style="display:none;"/></td>
+  `;
         tbody.appendChild(tr);
 
         multiOrderProducts[index] = {
@@ -197,6 +207,18 @@ document.addEventListener('DOMContentLoaded', () => {
           orderQuantity: 1,
           acquisitionPrice: p.acquisitionPrice || 0,
         };
+
+        // ------------------- Toggle "Read more" for order modal -------------------
+        const toggleBtn = tr.querySelector('.toggle-order-name-btn');
+        if (toggleBtn) {
+          const nameSpan = tr.querySelector('.order-name-text');
+          let expanded = false;
+          toggleBtn.addEventListener('click', () => {
+            expanded = !expanded;
+            nameSpan.textContent = expanded ? fullName : truncatedName;
+            toggleBtn.textContent = expanded ? 'Read less' : 'Read more';
+          });
+        }
       });
 
       // Checkbox change
@@ -333,6 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
   async function loadProducts(page = 1) {
     const search = searchInput.value.trim();
     const supplier = supplierFilter.value.trim();
+
     try {
       const { items: rawProducts, totalCount } =
         await productAPI.getAllProductsAPI({ page, limit, search, supplier });
@@ -374,6 +397,14 @@ document.addEventListener('DOMContentLoaded', () => {
     pagination.appendChild(nextBtn);
   }
 
+  // Helper to truncate text
+  function truncateText(text, limit = 5) {
+    if (!text) return '';
+    const plain = text.replace(/<\/?[^>]+(>|$)/g, ''); // remove HTML tags
+    if (plain.length <= limit) return plain;
+    return plain.slice(0, limit) + '...';
+  }
+
   function renderProducts() {
     inventoryBody.innerHTML = '';
     if (!products.length)
@@ -412,34 +443,102 @@ document.addEventListener('DOMContentLoaded', () => {
           product.acquisitionPrice ||
           0
       );
+
       const row = document.createElement('tr');
       row.dataset.id = product._id;
-      row.innerHTML = `
-        <td><img src="${product.imageUrl || '/assets/noimage.png'}" alt="${
-        product.name || 'No Image'
-      }" width="50"/></td>
-       <td>${product.sku}</td>
-<td>${formatRecordString(product.name)}</td>
-        <td>${formatRecordString(product.categoryName || '')}</td>
-<td>₱${price.toFixed(2)}</td>
-        <td>₱${acquisition.toFixed(2)}</td>
-        <td>${formatRecordString(product.supplierName || '')}</td>
-        <td class="${
-          product.quantity < (product.lowStockThreshold || 5) ? 'low-stock' : ''
-        }">${product.quantity}</td>
-        <td>${
-          product.description
-            ? formatRecordString(product.description)
-            : '<i>No description</i>'
-        }</td>
-        <td class="action-btns">
-          <button class="update-btn" data-id="${product._id}">Update</button>
-          <button class="delete-btn" data-id="${product._id}">Delete</button>
-        </td>
-      `;
-      inventoryBody.appendChild(row);
-    });
 
+      // Prepare full and truncated versions
+      const fullDescription = product.description
+        ? product.description
+        : 'No description';
+      const truncatedDescription = truncateText(fullDescription, 50);
+
+      const fullName = product.name || 'No Name';
+      const truncatedName = truncateText(fullName, 20);
+
+      const fullCategory = product.categoryName || 'No Category';
+      const truncatedCategory = truncateText(fullCategory, 20);
+
+      row.innerHTML = `
+      <td><img src="${
+        product.imageUrl || '../assets/noimage.png'
+      }" alt="${fullName}" width="50" onerror="this.onerror=null;this.src='../assets/noimage.png';"
+      style="width:50px;height:50px;object-fit:cover;"/></td>
+      <td>${product.sku}</td>
+      <td>
+        <span class="name-text">${truncatedName}</span>
+        ${
+          fullName.length > 20
+            ? `<button class="toggle-name-btn">Read more</button>`
+            : ''
+        }
+      </td>
+      <td>
+        <span class="category-text">${truncatedCategory}</span>
+        ${
+          fullCategory.length > 20
+            ? `<button class="toggle-category-btn">Read more</button>`
+            : ''
+        }
+      </td>
+      <td>₱${price.toFixed(2)}</td>
+      <td>₱${acquisition.toFixed(2)}</td>
+      <td>${formatRecordString(product.supplierName || '')}</td>
+      <td class="${
+        product.quantity < (product.lowStockThreshold || 5) ? 'low-stock' : ''
+      }">${product.quantity}</td>
+      <td>
+        <span class="description-text">${truncatedDescription}</span>
+        ${
+          fullDescription.length > 50
+            ? `<button class="toggle-desc-btn">Read more</button>`
+            : ''
+        }
+      </td>
+      <td class="action-btns">
+        <button class="update-btn" data-id="${product._id}">Update</button>
+        <button class="delete-btn" data-id="${product._id}">Delete</button>
+      </td>
+    `;
+
+      inventoryBody.appendChild(row);
+
+      // ------------------- Toggle handlers -------------------
+      const nameBtn = row.querySelector('.toggle-name-btn');
+      if (nameBtn) {
+        const nameSpan = row.querySelector('.name-text');
+        let expanded = false;
+        nameBtn.addEventListener('click', () => {
+          expanded = !expanded;
+          nameSpan.textContent = expanded ? fullName : truncatedName;
+          nameBtn.textContent = expanded ? 'Read less' : 'Read more';
+        });
+      }
+
+      const categoryBtn = row.querySelector('.toggle-category-btn');
+      if (categoryBtn) {
+        const catSpan = row.querySelector('.category-text');
+        let expanded = false;
+        categoryBtn.addEventListener('click', () => {
+          expanded = !expanded;
+          catSpan.textContent = expanded ? fullCategory : truncatedCategory;
+          categoryBtn.textContent = expanded ? 'Read less' : 'Read more';
+        });
+      }
+
+      const descBtn = row.querySelector('.toggle-desc-btn');
+      if (descBtn) {
+        const descSpan = row.querySelector('.description-text');
+        let expanded = false;
+        descBtn.addEventListener('click', () => {
+          expanded = !expanded;
+          descSpan.textContent = expanded
+            ? fullDescription
+            : truncatedDescription;
+          descBtn.textContent = expanded ? 'Read less' : 'Read more';
+        });
+      }
+    });
     attachEventListeners();
   }
 

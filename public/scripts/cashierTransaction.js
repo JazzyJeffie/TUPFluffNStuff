@@ -34,6 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
     renderPage();
   }
 
+  // Helper to truncate text
+  function truncateText(text, limit = 5) {
+    if (!text) return '';
+    const plain = text.replace(/<\/?[^>]+(>|$)/g, ''); // remove HTML tags
+    if (plain.length <= limit) return plain;
+    return plain.slice(0, limit) + '...';
+  }
+
   function renderPage() {
     transactionTable.innerHTML = '';
 
@@ -51,19 +59,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
     paginatedTransactions.forEach(tx => {
       const row = document.createElement('tr');
+
+      // Truncate product name
+      const truncated = truncateText(tx.product, 20); // adjust limit
+      const needsToggle = tx.product.length > 20;
+
       row.innerHTML = `
-        <td>${new Date(tx.dateTime).toLocaleString()}</td>
-        <td>${tx.receiptNum}</td>
-        <td>${tx.product}</td>
-        <td>₱${parseFloat(tx.price).toFixed(2)}</td>
-        <td>${tx.quantity}</td>
-        <td>
-          <button class="print-btn" data-id="${tx._id}" title="Print Receipt">
-            <i class="fa-solid fa-print"></i>
-          </button>
-        </td>
-      `;
+    <td>${new Date(tx.dateTime).toLocaleString()}</td>
+    <td>${tx.receiptNum}</td>
+    <td class="product-name">
+      <span class="text-short">${truncated}</span>
+      ${
+        needsToggle
+          ? `<span class="text-full hidden">${tx.product}</span>
+      <button class="toggle-btn">Read More</button>`
+          : ''
+      }
+    </td>
+    <td>${tx.addedBy}</td>
+    <td>₱${parseFloat(tx.price).toFixed(2)}</td>
+    <td>${tx.quantity}</td>
+    <td>
+      <button class="print-btn" data-id="${tx._id}" title="Print Receipt">
+        <i class="fa-solid fa-print"></i>
+      </button>
+      <button class="delete-btn" data-id="${tx._id}" title="Delete">
+        <i class="fa-solid fa-trash"></i>
+      </button>
+    </td>
+  `;
       transactionTable.appendChild(row);
+
+      // Add toggle functionality
+      const toggleBtn = row.querySelector('.toggle-btn');
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+          const textShort = row.querySelector('.text-short');
+          const textFull = row.querySelector('.text-full');
+          const isHidden = textFull.classList.contains('hidden');
+
+          if (isHidden) {
+            textFull.classList.remove('hidden');
+            textShort.classList.add('hidden');
+            toggleBtn.textContent = 'Show Less';
+          } else {
+            textFull.classList.add('hidden');
+            textShort.classList.remove('hidden');
+            toggleBtn.textContent = 'Read More';
+          }
+        });
+      }
     });
 
     renderPaginationControls();

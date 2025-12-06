@@ -26,14 +26,15 @@
   display: flex;
   gap: 1rem;
   padding: 1rem;
-  margin-left: 80px; /* default collapsed sidebar */
   height: 100%;
-  box-sizing: border-box;
   background-color: var(--sub-color);
   border-radius: var(--radius);
   transition: margin-left 0.3s, width 0.3s; /* smooth resize */
   box-shadow: 0 4px 4px var(--border-color1);
   width: calc(100% - 80px); /* fill more space */
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  margin-left: 64px; /* initial collapsed sidebar offset */
+  box-sizing: border-box;
 }
 
 .sidebar.expand-right ~ main .container {

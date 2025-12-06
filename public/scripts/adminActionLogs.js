@@ -15,6 +15,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   const pageSize = 10;
   let totalLogs = 0;
 
+  // Helper to truncate text
+  function truncateText(text, limit = 5) {
+    if (!text) return '';
+    const plain = text.replace(/<\/?[^>]+(>|$)/g, ''); // remove HTML tags
+    if (plain.length <= limit) return plain;
+    return plain.slice(0, limit) + '...';
+  }
+
   // Load Actions
   async function loadActions() {
     try {
@@ -46,21 +54,53 @@ document.addEventListener('DOMContentLoaded', async () => {
       paginationEl.innerHTML = '';
       return;
     }
-
     logs.forEach(log => {
       const row = document.createElement('tr');
       const userName = log.user?.name
         ? `${log.user.name.firstName} ${log.user.name.lastName}`
         : 'Unknown';
 
+      // Truncate description
+      const truncated = truncateText(log.description, 50); // adjust limit
+      const needsToggle = log.description && log.description.length > 50;
+
       row.innerHTML = `
-        <td>${new Date(log.timestamp).toLocaleString()}</td>
-        <td>${userName}</td>
-        <td>${log.user?.role || 'N/A'}</td>
-        <td>${log.action}</td>
-        <td>${log.description || ''}</td>
-      `;
+    <td>${new Date(log.timestamp).toLocaleString()}</td>
+    <td>${userName}</td>
+    <td>${log.user?.role || 'N/A'}</td>
+    <td>${log.action}</td>
+    <td class="description">
+      <span class="text-short">${truncated}</span>
+      ${
+        needsToggle
+          ? `<span class="text-full hidden">${log.description}</span>
+      <button class="toggle-btn">Read More</button>`
+          : ''
+      }
+    </td>
+  `;
+
       tbody.appendChild(row);
+
+      // Toggle button functionality
+      const toggleBtn = row.querySelector('.toggle-btn');
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+          const textShort = row.querySelector('.text-short');
+          const textFull = row.querySelector('.text-full');
+          const isHidden = textFull.classList.contains('hidden');
+
+          if (isHidden) {
+            textFull.classList.remove('hidden');
+            textShort.classList.add('hidden');
+            toggleBtn.textContent = 'Show Less';
+          } else {
+            textFull.classList.add('hidden');
+            textShort.classList.remove('hidden');
+            toggleBtn.textContent = 'Read More';
+          }
+        });
+      }
     });
 
     renderPagination();

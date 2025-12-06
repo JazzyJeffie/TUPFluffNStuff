@@ -1,6 +1,6 @@
 main {
   width: 450px;
-  max-width: 90%; /* keeps it responsive */
+  max-width: 100%; /* keeps it responsive */
   max-height: 700px; /* let content define height */
   margin: auto; /* center properly */
   flex-direction: column;

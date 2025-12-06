@@ -31,8 +31,11 @@
   background-color: var(--sub-color);
   border-radius: 12px;
   padding: 2rem;
-  box-sizing: border-box; /* ensures internal padding is included */
   box-shadow: 0 4px 4px var(--border-color);
+
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  margin-left: 80px; /* initial collapsed sidebar offset */
+  box-sizing: border-box;
 }
 
 .container h1 {

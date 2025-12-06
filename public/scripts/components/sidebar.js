@@ -3,6 +3,9 @@ const mainContent = document.querySelector('main');
 const container = document.querySelector('.container');
 const footer = document.querySelector('footer');
 
+const collapsedWidth = 64; // 4rem
+const expandedWidth = 300; // match your CSS
+
 // Only select nav items inside the sidebar
 const sidebarNavLabels = sidebar.querySelectorAll('.nav-label');
 const sidebarNavLists = sidebar.querySelectorAll('.nav-icons, .control-icons');
@@ -15,13 +18,17 @@ sidebar.addEventListener('click', async e => {
   // Expand/collapse sidebar
   if (listItem.classList.contains('expand')) {
     sidebar.classList.toggle('expand-right');
+    footer.classList.toggle('sidebar-expanded'); // <-- toggle class
 
     // Toggle only sidebar labels
     sidebarNavLabels.forEach(label => label.classList.toggle('hidden'));
     sidebarNavLists.forEach(list => list.classList.toggle('sidebar-expanded'));
 
-    // Adjust main content and footer margin dynamically
-    const sidebarWidth = sidebar.classList.contains('expand-right') ? 400 : 80;
+    // Adjust main content
+    const sidebarWidth = sidebar.classList.contains('expand-right')
+      ? expandedWidth
+      : collapsedWidth;
+
     mainContent.style.marginLeft = `${sidebarWidth}px`;
     footer.style.marginLeft = `${sidebarWidth}px`;
   }

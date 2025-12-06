@@ -30,6 +30,9 @@
   border-radius: 8px;
   padding: 2rem;
   box-shadow: 0 4px 4px var(--border-color1);
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  margin-left: 64px; /* initial collapsed sidebar offset */
+  box-sizing: border-box;
 }
 
 .logs-section {
@@ -151,3 +154,13 @@
   color: var(--main-color);
   font-weight: bold;
 }
+
+.description .text-full {
+  display: inline;
+}
+
+.description .hidden {
+  display: none;
+}
+
+

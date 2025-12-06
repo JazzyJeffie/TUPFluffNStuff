@@ -33,11 +33,14 @@ main {
 .container {
   width: calc(100% - 80px);
   transition: width 0.3s;
-  margin: 0 auto;
   background-color: var(--sub-color);
   border-radius: 8px;
   padding: 2rem;
   box-shadow: 0 4px 4px var(--border-color1);
+  align-items: center;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  margin-left: 64px; /* initial collapsed sidebar offset */
+  box-sizing: border-box;
 }
 
 h1 {

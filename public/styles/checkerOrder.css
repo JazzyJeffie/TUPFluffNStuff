@@ -186,6 +186,31 @@ main {
   box-shadow: var(--shadow);
   max-width: 400px;
   width: 100%;
+  max-height: 80vh; /* modal won't exceed 80% of viewport height */
+  overflow-y: auto; /* enable vertical scroll if content exceeds max-height */
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+/* Webkit browsers (Chrome, Edge, Safari, Brave) */
+.modal-content::-webkit-scrollbar {
+  width: 6px; /* thin scrollbar */
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: var(--sub-color); /* track background */
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color); /* thumb color */
+  border-radius: 10px;
+  border: 1px solid var(--border-color1); /* optional border */
+}
+
+/* Firefox */
+.modal-content {
+  scrollbar-width: thin; /* make scrollbar thin */
+  scrollbar-color: var(--primary-color) var(--sub-color); /* thumb and track color */
 }
 
 .modal-content h3 {

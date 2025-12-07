@@ -93,8 +93,33 @@ const stockStatus = async () => {
 };
 
 const getOrderSummary = async () => {
+  // Get current date in PH timezone
+  const nowPH = new Date(
+    new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' })
+  );
+
+  // Get Monday of this week
+  const dayOfWeek = nowPH.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+  const diffToMonday = dayOfWeek === 0 ? 6 : dayOfWeek - 1; // if Sunday, go back 6 days
+  const monday = new Date(nowPH);
+  monday.setDate(nowPH.getDate() - diffToMonday);
+  monday.setHours(0, 0, 0, 0);
+
+  // Get Sunday of this week
+  const sunday = new Date(monday);
+  sunday.setDate(monday.getDate() + 6);
+  sunday.setHours(23, 59, 59, 999);
+
   const summary = await Stock.aggregate([
-    { $match: { isDeleted: false } },
+    {
+      $match: {
+        isDeleted: false,
+        deliveryDate: {
+          $gte: monday,
+          $lte: sunday,
+        },
+      },
+    },
     {
       $group: {
         _id: '$status',
@@ -108,105 +133,26 @@ const getOrderSummary = async () => {
   const result = {
     pending: { count: 0, totalOrdered: 0, totalDelivered: 0 },
     delivered: { count: 0, totalOrdered: 0, totalDelivered: 0 },
-    cancelled: { count: 0, totalOrdered: 0, totalDelivered: 0 },
+    cancelled: { count: 0, totalOrdered: 0 }, // slightly different format
   };
 
   summary.forEach(item => {
-    result[item._id] = {
-      count: item.count,
-      totalOrdered: item.totalOrdered,
-      totalDelivered: item.totalDelivered,
-    };
+    if (item._id === 'cancelled') {
+      result.cancelled = {
+        count: item.count,
+        totalOrdered: item.totalOrdered,
+      };
+    } else {
+      result[item._id] = {
+        count: item.count,
+        totalOrdered: item.totalOrdered,
+        totalDelivered: item.totalDelivered,
+      };
+    }
   });
 
   return result;
 };
-
-// ✅ Inventory Summary
-// const getInventorySummary = async (startDate, endDate) => {
-//   const dateFilter = {};
-//   if (startDate || endDate) {
-//     dateFilter.$and = [];
-//     if (startDate)
-//       dateFilter.$and.push({ createdAt: { $gte: new Date(startDate) } });
-//     if (endDate)
-//       dateFilter.$and.push({ createdAt: { $lte: new Date(endDate) } });
-//   }
-
-//   const products = await Product.find({ status: 'active' });
-
-//   const summary = await Promise.all(
-//     products.map(async p => {
-//       // ✅ Total received (Orders / deliveries)
-//       const receivedAgg = await Stock.aggregate([
-//         {
-//           $match: {
-//             productId: p._id,
-//             ...(dateFilter.$and?.length ? { $and: dateFilter.$and } : {}),
-//           },
-//         },
-//         { $group: { _id: null, total: { $sum: '$deliveredQuantity' } } },
-//       ]);
-//       const qtyReceived = receivedAgg[0]?.total || 0;
-
-//       // ✅ Total sold
-//       const soldAgg = await transactionItem.aggregate([
-//         {
-//           $match: {
-//             productId: p._id,
-//             isDeleted: false,
-//             ...(dateFilter.$and?.length ? { $and: dateFilter.$and } : {}),
-//           },
-//         },
-//         { $group: { _id: null, total: { $sum: '$quantity' } } },
-//       ]);
-//       const qtySold = soldAgg[0]?.total || 0;
-
-//       // ✅ Total refunded
-//       const refundAgg = await refund.aggregate([
-//         {
-//           $match: {
-//             productId: p._id,
-//             isDeleted: false,
-//             ...(dateFilter.$and?.length ? { $and: dateFilter.$and } : {}),
-//           },
-//         },
-//         { $group: { _id: null, total: { $sum: '$quantity' } } },
-//       ]);
-//       const qtyRefunded = refundAgg[0]?.total || 0;
-
-//       // ✅ Total damaged/adjusted
-//       const adjustmentAgg = await stockAdjustment.aggregate([
-//         {
-//           $match: {
-//             productId: p._id,
-//             type: { $in: ['damaged', 'expired', 'shrinkage'] },
-//             ...(dateFilter.$and?.length ? { $and: dateFilter.$and } : {}),
-//           },
-//         },
-//         { $group: { _id: null, total: { $sum: '$quantity' } } },
-//       ]);
-//       const qtyDamaged = adjustmentAgg[0]?.total || 0;
-
-//       // ✅ On hand = Inventory (real-time)
-//       const inventory = await Inventory.findOne({ productId: p._id });
-//       const qtyOnHand = inventory ? inventory.quantity : 0;
-
-//       return {
-//         productId: p._id,
-//         productName: p.name,
-//         qtyReceived,
-//         qtySold,
-//         qtyRefunded,
-//         qtyDamaged,
-//         qtyOnHand,
-//         acquisitionPrice: inventory?.acquisitionPrice || 0,
-//       };
-//     })
-//   );
-
-//   return summary;
-// };
 
 const getInventorySummary = async (startDate, endDate) => {
   const dateFilter = {};

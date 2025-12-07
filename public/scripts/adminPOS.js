@@ -521,7 +521,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const shortDesc = desc.length > 10 ? desc.slice(0, 10) + '...' : desc;
 
       itemDiv.innerHTML = `
-      <img src="${product.imageUrl || './assets/default.png'}" />
+      <img src="${
+        product.imageUrl || './assets/default.png'
+      }" onerror="this.onerror=null;this.src='../assets/noimage.png';"
+      style="width:50px;height:50px;object-fit:cover;"/>
       <div>
         <p style="font-weight:bold;">${product.name}</p>
         <p style="font-size:1rem;color:#555;"><strong>SKU:</strong> ${
@@ -605,7 +608,10 @@ document.addEventListener('DOMContentLoaded', () => {
       <td class="${voidMode ? '' : 'hidden'}">
         <input type="checkbox" class="void-checkbox" data-index="${index}" />
       </td>
-      <td><img src="${item.img}" width="40" /></td>
+      <td><img src="${
+        item.img
+      }" width="40" onerror="this.onerror=null;this.src='../assets/noimage.png';"
+      style="width:50px;height:50px;object-fit:cover;" /></td>
       <td>${item.name}</td>
       <td>${item.sku}</td>
       <td>₱${item.price.toFixed(2)}</td>

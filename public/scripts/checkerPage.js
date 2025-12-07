@@ -410,7 +410,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       </td>
       <td class="action-btns">
         <button class="update-btn" data-id="${product._id}">Update</button>
-        <button class="delete-btn" data-id="${product._id}">Delete</button>
       </td>
     `;
       inventoryBody.appendChild(row);

@@ -83,6 +83,7 @@ main {
 .toggle-btn,
 .toggle-name-btn,
 .toggle-desc-btn,
+.toggle-supplier-btn,
 .toggle-order-name-btn {
   background: none;
   border: none;

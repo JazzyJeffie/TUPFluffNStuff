@@ -72,6 +72,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         deliveredQuantity: o.deliveredQuantity ?? o.delivedQuantity ?? 0,
       }));
 
+      // Sort by default: pending first, then delivered, then cancelled
+      list.sort((a, b) => {
+        const statusOrder = { pending: 1, delivered: 2, cancelled: 3 };
+        return (statusOrder[a.status] || 99) - (statusOrder[b.status] || 99);
+      });
+
       orders = list;
       currentPage = page;
       totalPages = Math.ceil((response.total || list.length) / pageLimit);
@@ -132,6 +138,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   function renderOrders(list = []) {
     tableBody.innerHTML = '';
     const today = new Date();
+    const todayPH = new Date(
+      new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' })
+    );
 
     if (!list.length) {
       tableBody.innerHTML =
@@ -140,11 +149,46 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     list.forEach(order => {
-      const delivery = new Date(order.deliveryDate);
-      const isOverdue = order.status === 'pending' && delivery < today;
+      const delivery = new Date(
+        new Date(order.deliveryDate).toLocaleString('en-US', {
+          timeZone: 'Asia/Manila',
+        })
+      );
+
+      const isLate = order.status === 'pending' && delivery < todayPH;
 
       const row = document.createElement('tr');
-      if (isOverdue) row.style.backgroundColor = '#ffe5e5';
+      if (isLate) row.style.backgroundColor = '#ffe5e5'; // highlight late
+
+      // rest of rendering logic...
+    });
+
+    list.forEach(order => {
+      const row = document.createElement('tr');
+
+      // Compute deliveryDate safely
+      const deliveryDate = order.deliveryDate
+        ? new Date(order.deliveryDate)
+        : null;
+
+      // Normalize to PH timezone
+      const todayPH = new Date(
+        new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' })
+      );
+
+      // Determine overdue
+      const isOverdue =
+        order.status === 'pending' ||
+        (order.status === 'delivered' &&
+          deliveryDate instanceof Date &&
+          !isNaN(deliveryDate) &&
+          deliveryDate < todayPH);
+
+      // Apply highlight
+      if (isOverdue) {
+        row.style.backgroundColor = '#ffeaea';
+        row.style.borderLeft = '4px solid #ff4d4d'; // thin visible marker
+      }
 
       const product = order.productId || {};
       const deliveredDate = order.deliveredDate

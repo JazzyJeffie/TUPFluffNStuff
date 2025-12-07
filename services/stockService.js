@@ -1,5 +1,6 @@
 import stockModel from '../models/stockModel.js';
 import Product from '../models/productModel.js';
+import Inventory from '../models/inventoryModel.js';
 const createStock = async data => {
   const newStock = await stockModel.create(data);
   return newStock;
@@ -47,7 +48,7 @@ const getAllStock = async ({
   limit = 10,
   page = 1,
   sortBy = 'deliveryDate',
-  sortOrder = 'asc',
+  sortOrder = 'desc',
 }) => {
   const query = { isDeleted: false };
 
@@ -155,22 +156,57 @@ const getOrderSummary = async () => {
 };
 
 const stockStatus = async () => {
-  const stockData = await stockModel.aggregate([
-    { $match: { isDeleted: false } },
+  // Get current date in PH timezone (not strictly necessary here, but keeping for reference)
+  const nowPH = new Date(
+    new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' })
+  );
+
+  // Aggregate inventory with product info
+  const stockData = await Inventory.aggregate([
+    // Only active inventory
+    { $match: { status: 'active' } },
+    // Join with Product to get lowStockThreshold
+    {
+      $lookup: {
+        from: 'products', // collection name
+        localField: 'productId',
+        foreignField: '_id',
+        as: 'product',
+      },
+    },
+    { $unwind: '$product' },
+    // Only active products
+    { $match: { 'product.status': 'active' } },
     {
       $group: {
-        _id: '$status',
-        count: { $sum: 1 },
+        _id: null,
+        totalOnHand: { $sum: '$quantity' },
+        criticalProducts: {
+          $sum: {
+            $cond: [
+              { $lte: ['$quantity', '$product.lowStockThreshold'] },
+              1,
+              0,
+            ],
+          },
+        },
+        outOfStockProducts: {
+          $sum: {
+            $cond: [{ $eq: ['$quantity', 0] }, 1, 0],
+          },
+        },
       },
     },
   ]);
 
-  const result = { pending: 0, delivered: 0, cancelled: 0 };
-  stockData.forEach(item => {
-    result[item._id] = item.count;
-  });
+  // Return default if no inventory
+  if (!stockData || stockData.length === 0) {
+    return { totalOnHand: 0, criticalProducts: 0, outOfStockProducts: 0 };
+  }
 
-  return result;
+  const { totalOnHand, criticalProducts, outOfStockProducts } = stockData[0];
+
+  return { totalOnHand, criticalProducts, outOfStockProducts };
 };
 
 export default {

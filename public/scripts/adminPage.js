@@ -48,10 +48,14 @@ const renderStockChart = stock => {
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ['Pending', 'Delivered', 'Cancelled'],
+      labels: ['Critical', 'On Hand', 'Out of Stock'],
       datasets: [
         {
-          data: [stock.pending, stock.delivered, stock.cancelled],
+          data: [
+            stock.criticalProducts,
+            stock.totalOnHand,
+            stock.outOfStockProducts,
+          ],
           backgroundColor: ['#fbc02d', '#4caf50', '#f44336'],
           borderWidth: 1,
         },
@@ -112,7 +116,7 @@ const renderOrderSummary = orders => {
   ul.innerHTML = `
     <li>Pending: ${orders.pending.count} (Ordered: ${orders.pending.totalOrdered}, Delivered: ${orders.pending.totalDelivered})</li>
     <li>Delivered: ${orders.delivered.count} (Ordered: ${orders.delivered.totalOrdered}, Delivered: ${orders.delivered.totalDelivered})</li>
-    <li>Cancelled: ${orders.cancelled.count} (Ordered: ${orders.cancelled.totalOrdered}, Delivered: ${orders.cancelled.totalDelivered})</li>
+    <li>Cancelled: ${orders.cancelled.count} (Ordered: ${orders.cancelled.totalOrdered})</li>
   `;
 };
 

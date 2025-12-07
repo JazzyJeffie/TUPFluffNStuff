@@ -76,15 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
           : ''
       }
     </td>
-    <td>${tx.addedBy}</td>
     <td>₱${parseFloat(tx.price).toFixed(2)}</td>
     <td>${tx.quantity}</td>
     <td>
       <button class="print-btn" data-id="${tx._id}" title="Print Receipt">
         <i class="fa-solid fa-print"></i>
-      </button>
-      <button class="delete-btn" data-id="${tx._id}" title="Delete">
-        <i class="fa-solid fa-trash"></i>
       </button>
     </td>
   `;
